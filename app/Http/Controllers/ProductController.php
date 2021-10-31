@@ -9,10 +9,16 @@ class ProductController extends Controller
     public function index(){
     $product = Product::all();
     return view('product.index',[
-        'product' => $product,
+        'products' => $product,
     ]);
     }
     
+    public function show($id)
+    {
+         return view('product.show')
+             ->with('product', Product::find($id));
+    }
+     
     public function create(){
         $product = new Product;
         return view('product.create',[
