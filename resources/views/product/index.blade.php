@@ -13,6 +13,7 @@
         All Products
     </div>
     @if(Auth::check())
+     
      {!! link_to_route('users.show','ユーザー詳細情報',['users'=>Auth::user()->id],['class'=> 'btn btn-primary']) !!}
      {!! link_to_route('cart.index','カートの中身を見る',[],['class'=> 'btn btn-primary']) !!}
     

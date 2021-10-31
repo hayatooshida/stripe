@@ -12,13 +12,16 @@
 */
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','ProductController@index');
 Route::get('/create','ProductController@create');
 Route::post('/books','ProductController@store');
+
+Route::middleware('verified')->group(function() {
 
 Route::name('product.')
       ->group(function () {
@@ -31,3 +34,4 @@ Route::post('/cart/create','CartController@store')->name('cart.create');
 Route::get('/cart/index','CartController@index')->name('cart.index');
 Route::get('/cart/checkout','CartController@checkout')->name('cart.checkout');
 Route::delete('/cart/{cart}','CartController@destroy');
+});

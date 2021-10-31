@@ -1,7 +1,14 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-@section('content')
-
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
 @foreach($cart as $carts)
 
 {{ $carts->name }}
@@ -24,4 +31,5 @@
 @else
 <h1 style="text-align:center">カートに商品は、入っていません</h1>
 @endif
-@endsection
+</body>
+</html>
